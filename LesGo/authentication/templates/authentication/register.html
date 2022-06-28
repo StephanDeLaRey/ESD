@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Generel elements-->
+    <title>HTML Script - Registration page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Add short description here...">
+    <meta name="keywords" content="html, css">
+    <link rel="stylesheet" href="styleloc1.css">
+    <!--End of general elements-->
+
+    <!--Specific styles to this program-->
+    <style type="text/css">
+        input[type="submit"] {
+            cursor: pointer;
+        }
+
+        input[type="Reset"] {
+            cursor: pointer;
+        }
+
+        label {
+            width: 100px;
+            display: inline-block;
+        }
+    </style>
+    <!--End of styles-->
+
+    <h1>Registration Page </h1>
+    <hr>
+</head>
+
+<body>
+    <form action="{% url 'register' %}" method="POST">
+    {% csrf_token %}
+
+        <!-- Write to a file or form??????-->
+        <table>
+            <Label>Email:</label>
+            <input type="email" name="email" placeholder="Enter work email here"><br>
+            <label>Password:</label>
+            <input type="password" name="pwd" placeholder="Enter password here"><br>
+        </table>
+
+        <tr>
+            <td>
+                <button type="submit" name="Register"><strong>Register</strong></button>
+                <!--To database-->
+                <!--Action buttons -(Submit, Reset) etc - Must use in 'form' bracket with fields in the bracket as well AND action clause in beginning to work-->
+            </td>
+        </tr>
+    </form>
+
+    <tr><br>
+        <td>***** Successful Message *****</td><br><br>
+        <!--Develop a successfull or unsuccessfull indicator - Stephan-->
+    </tr>
+
+    <tr>
+        <td>Already Registered? <a href="/accounts/login/">Go to Login Screen</a>
+        </td>
+    </tr>
+
+</body>
+
+</html>
